@@ -4,9 +4,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function App() {
-  console.log(process.env.REACT_APP_API_KEY);
+  //STATE
   const [cards, setCards] = useState([]);
 
+  // API CALL FOR BACKEND
   useEffect(() => {
     const options = {
       method: "GET",
@@ -19,7 +20,7 @@ function App() {
         const data = response.data;
 
         setCards(data);
-        console.log(cards);
+        console.log(data);
       })
       .catch(function (error) {
         console.error(error);
