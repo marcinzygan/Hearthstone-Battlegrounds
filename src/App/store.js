@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import loadingReducer from "./Features/loadingSlice";
+import loaderReducer from "./Features/Loader/loaderSlice";
+import cardsReducer from "./Features/Cards/cardsSlice";
 export const store = configureStore({
   reducer: {
-    loader: loadingReducer,
+    loader: loaderReducer,
+    cards: cardsReducer,
   },
 });

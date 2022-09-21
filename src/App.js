@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { loadingData, notLoadingData } from "./App/Features/loadingSlice";
-import Loading from "./Components/Loading.js";
+import { loadingData, notLoadingData } from "./App/Features/Loader/loaderSlice";
+import { setData } from "./App/Features/Cards/cardsSlice";
+import Loading from "./App/Features/Loader/Loading.js";
 
 function App() {
   //STATE
-  const [cards, setCards] = useState([]);
+  const cards = useSelector((state) => state.cards.cards);
   const loading = useSelector((state) => state.loader.loading);
   const dispatch = useDispatch();
   console.log(loading);
@@ -24,7 +25,7 @@ function App() {
         dispatch(loadingData());
         const data = response.data;
 
-        setCards(data);
+        dispatch(setData(data));
         console.log(data);
         dispatch(notLoadingData());
       })
