@@ -1,11 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Loading from "./Components/Loading";
+import { useSelector, useDispatch } from "react-redux";
+import { loadingData, notLoadingData } from "./App/Features/loadingSlice";
+import Loading from "./Components/Loading.js";
 
 function App() {
   //STATE
   const [cards, setCards] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const loading = useSelector((state) => state.loader.loading);
+  const dispatch = useDispatch();
+  console.log(loading);
+
   // API CALL FOR BACKEND
   useEffect(() => {
     const options = {
@@ -16,16 +21,17 @@ function App() {
     axios
       .request(options)
       .then(function (response) {
-        setLoading(true);
+        dispatch(loadingData());
         const data = response.data;
 
         setCards(data);
         console.log(data);
-        setLoading(false);
+        dispatch(notLoadingData());
       })
+
       .catch(function (error) {
         console.error(error);
-        setLoading(false);
+        dispatch(notLoadingData());
       });
   }, []);
   if (loading) {
