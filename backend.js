@@ -16,7 +16,7 @@ app.get("/", (req, res) => {
 app.get("/cards", (req, res) => {
   const options = {
     method: "GET",
-    url: "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/battlegrounds",
+    url: "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/battlegrounds?limit=10",
     headers: {
       "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
       "X-RapidAPI-Host": "omgvamp-hearthstone-v1.p.rapidapi.com",
