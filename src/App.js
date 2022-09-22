@@ -26,7 +26,7 @@ function App() {
         dispatch(loadingData());
         const data = response.data;
 
-        dispatch(setData(data.slice(0, 5)));
+        dispatch(setData(data));
         console.log(data);
         dispatch(notLoadingData());
       })
