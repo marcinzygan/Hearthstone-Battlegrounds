@@ -8,7 +8,12 @@ const paginateSlice = createSlice({
   name: "page",
   initialState,
   reducers: {
-    nextPage: (state) => {
+    nextPage: (state, data) => {
+      console.log(data.payload);
+
+      if (state.pageNumber >= data.payload) {
+        return;
+      }
       state.pageNumber += 1;
     },
     prevPage: (state) => {

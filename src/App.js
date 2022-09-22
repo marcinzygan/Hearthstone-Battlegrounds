@@ -27,7 +27,7 @@ function App() {
         dispatch(loadingData());
         const data = response.data;
 
-        dispatch(setData(data.slice(0, 10)));
+        dispatch(setData(data));
         console.log(data);
         dispatch(notLoadingData());
       })
@@ -37,18 +37,24 @@ function App() {
         dispatch(notLoadingData());
       });
   }, [dispatch]);
-
+  // Pagination Logic
+  const cardsPerPage = 10;
+  const cardsSeen = pageNumber * cardsPerPage;
+  const numberOfPages = Math.floor(cards.length / cardsPerPage);
+  const displayCards = cards
+    .slice(cardsSeen, cardsPerPage + cardsSeen)
+    .map((card) => {
+      return <h1>{card.name}</h1>;
+    });
   if (loading) {
     return <Loading />;
   }
   return (
     <div className="App">
-      {cards.map((card) => {
-        return <h1>{card.name}</h1>;
-      })}
+      {displayCards}
       <button onClick={() => dispatch(prevPage())}>Prev</button>
-      {pageNumber}
-      <button onClick={() => dispatch(nextPage())}>next</button>
+      {pageNumber} of {numberOfPages}
+      <button onClick={() => dispatch(nextPage(numberOfPages))}>next</button>
     </div>
   );
 }
