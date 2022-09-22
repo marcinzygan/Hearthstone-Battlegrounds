@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loadingData, notLoadingData } from "./App/Features/Loader/loaderSlice";
 import { setData } from "./App/Features/Cards/cardsSlice";
-import { nextPage } from "./App/Features/Pagination/paginateSlice";
+import { nextPage, prevPage } from "./App/Features/Pagination/paginateSlice";
 import Loading from "./App/Features/Loader/Loading.js";
 
 function App() {
   //STATE
   const cards = useSelector((state) => state.cards.cards);
   const loading = useSelector((state) => state.loader.loading);
+  const pageNumber = useSelector((state) => state.page.pageNumber);
   const dispatch = useDispatch();
   console.log(loading);
 
@@ -26,7 +27,7 @@ function App() {
         dispatch(loadingData());
         const data = response.data;
 
-        dispatch(setData(data));
+        dispatch(setData(data.slice(0, 10)));
         console.log(data);
         dispatch(notLoadingData());
       })
@@ -36,6 +37,7 @@ function App() {
         dispatch(notLoadingData());
       });
   }, [dispatch]);
+
   if (loading) {
     return <Loading />;
   }
@@ -44,7 +46,9 @@ function App() {
       {cards.map((card) => {
         return <h1>{card.name}</h1>;
       })}
-      <button onClick={() => dispatch(nextPage())}></button>
+      <button onClick={() => dispatch(prevPage())}>Prev</button>
+      {pageNumber}
+      <button onClick={() => dispatch(nextPage())}>next</button>
     </div>
   );
 }
