@@ -2,9 +2,6 @@ import React from "react";
 
 const Card = (card) => {
   const { name, text, img, type, cardSet } = card;
-  if (!img) {
-    return;
-  }
 
   return (
     <>

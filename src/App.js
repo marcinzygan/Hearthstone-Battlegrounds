@@ -40,10 +40,10 @@ function App() {
   // PAGINATION LOGIC
   const cardsPerPage = 10;
   const cardsSeen = pageNumber * cardsPerPage;
-  const numberOfPages = Math.floor(cards.length / cardsPerPage);
+  const numberOfPages = Math.ceil(cards.length / cardsPerPage);
   //Display cards function
   const displayCards = cards
-    .slice(cardsSeen, cardsPerPage + cardsSeen)
+    .slice(cardsSeen - 10, cardsPerPage - 10 + cardsSeen)
     .map((card) => {
       return (
         <>
