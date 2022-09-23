@@ -5,6 +5,7 @@ import { loadingData, notLoadingData } from "./App/Features/Loader/loaderSlice";
 import { setData } from "./App/Features/Cards/cardsSlice";
 import { nextPage, prevPage } from "./App/Features/Pagination/paginateSlice";
 import Loading from "./App/Features/Loader/Loading.js";
+import Card from "./App/Features/Cards/Card";
 
 function App() {
   //STATE
@@ -12,7 +13,6 @@ function App() {
   const loading = useSelector((state) => state.loader.loading);
   const pageNumber = useSelector((state) => state.page.pageNumber);
   const dispatch = useDispatch();
-  console.log(loading);
 
   // API CALL FOR BACKEND
   useEffect(() => {
@@ -37,14 +37,19 @@ function App() {
         dispatch(notLoadingData());
       });
   }, [dispatch]);
-  // Pagination Logic
+  // PAGINATION LOGIC
   const cardsPerPage = 10;
   const cardsSeen = pageNumber * cardsPerPage;
   const numberOfPages = Math.floor(cards.length / cardsPerPage);
+  //Display cards function
   const displayCards = cards
     .slice(cardsSeen, cardsPerPage + cardsSeen)
     .map((card) => {
-      return <h1>{card.name}</h1>;
+      return (
+        <>
+          <Card {...card} />
+        </>
+      );
     });
   if (loading) {
     return <Loading />;

@@ -9,7 +9,20 @@ const cardsSlice = createSlice({
   initialState,
   reducers: {
     setData: (state, data) => {
-      state.cards = data.payload;
+      const newState = data.payload
+        .map((card, index) => {
+          return card;
+        })
+        .filter((card) => card.img && card.type === "Minion");
+      console.log(newState);
+
+      const noDuplicates = newState.filter(
+        (value, index, self) =>
+          index === self.findIndex((card) => card.name === value.name)
+      );
+      console.log(noDuplicates);
+
+      state.cards = noDuplicates;
     },
   },
 });
