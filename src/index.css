@@ -10,3 +10,8 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(300px, 1fr));
 }
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

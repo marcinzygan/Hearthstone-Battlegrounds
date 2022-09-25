@@ -30,6 +30,7 @@ function App() {
         dispatch(setData(data));
         console.log(data);
         dispatch(notLoadingData());
+        window.scrollTo(0, 0);
       })
 
       .catch(function (error) {

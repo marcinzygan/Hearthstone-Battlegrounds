@@ -7,8 +7,8 @@ const Card = (card) => {
     <div className="card">
       <h1>{name}</h1>
       <img src={img} alt={name} />
-      <p>{text}</p>
-      <p>{type}</p>
+
+      <>{type}</>
     </div>
   );
 };

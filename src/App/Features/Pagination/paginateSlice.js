@@ -15,12 +15,14 @@ const paginateSlice = createSlice({
         return;
       }
       state.pageNumber += 1;
+      window.scrollTo(0, 0);
     },
     prevPage: (state) => {
       if (state.pageNumber <= 1) {
         return;
       }
       state.pageNumber -= 1;
+      window.scrollTo(0, 0);
     },
   },
 });
