@@ -46,21 +46,21 @@ function App() {
     .slice(cardsSeen - 10, cardsPerPage - 10 + cardsSeen)
     .map((card) => {
       return (
-        <>
+        <div>
           <Card {...card} />
-        </>
+        </div>
       );
     });
   if (loading) {
     return <Loading />;
   }
   return (
-    <div className="App">
-      {displayCards}
+    <>
+      <div className="card-container">{displayCards}</div>
       <button onClick={() => dispatch(prevPage())}>Prev</button>
       {pageNumber} of {numberOfPages}
       <button onClick={() => dispatch(nextPage(numberOfPages))}>next</button>
-    </div>
+    </>
   );
 }
 
