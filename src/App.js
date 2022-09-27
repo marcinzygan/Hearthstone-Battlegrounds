@@ -6,6 +6,7 @@ import { setData } from "./App/Features/Cards/cardsSlice";
 import { nextPage, prevPage } from "./App/Features/Pagination/paginateSlice";
 import Loading from "./App/Features/Loader/Loading.js";
 import Card from "./App/Features/Cards/Card";
+import Pagination from "./App/Features/Pagination/Pagination";
 
 function App() {
   //STATE
@@ -30,7 +31,6 @@ function App() {
         dispatch(setData(data));
         console.log(data);
         dispatch(notLoadingData());
-        window.scrollTo(0, 0);
       })
 
       .catch(function (error) {
@@ -42,6 +42,8 @@ function App() {
   const cardsPerPage = 10;
   const cardsSeen = pageNumber * cardsPerPage;
   const numberOfPages = Math.ceil(cards.length / cardsPerPage);
+  console.log(numberOfPages);
+
   //Display cards function
   const displayCards = cards
     .slice(cardsSeen - 10, cardsPerPage - 10 + cardsSeen)
@@ -58,9 +60,7 @@ function App() {
   return (
     <>
       <div className="card-container">{displayCards}</div>
-      <button onClick={() => dispatch(prevPage())}>Prev</button>
-      {pageNumber} of {numberOfPages}
-      <button onClick={() => dispatch(nextPage(numberOfPages))}>next</button>
+      <Pagination numberOfPages={numberOfPages} />
     </>
   );
 }
