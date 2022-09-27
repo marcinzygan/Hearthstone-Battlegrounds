@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = (card) => {
-  const { name, text, img, type, cardSet } = card;
+  const { name, text, img, type, cardSet, cardId } = card;
 
   return (
     <div className="card">

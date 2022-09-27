@@ -42,24 +42,31 @@ function App() {
   const cardsPerPage = 10;
   const cardsSeen = pageNumber * cardsPerPage;
   const numberOfPages = Math.ceil(cards.length / cardsPerPage);
-  console.log(numberOfPages);
 
   //Display cards function
-  const displayCards = cards
-    .slice(cardsSeen - 10, cardsPerPage - 10 + cardsSeen)
-    .map((card) => {
-      return (
-        <div>
-          <Card {...card} />
-        </div>
-      );
-    });
+  const displayCards = cards.slice(
+    cardsSeen - 10,
+    cardsPerPage - 10 + cardsSeen
+  );
+  // .map((card) => {
+  //   return (
+  //     <div>
+  //       <Card {...card} />
+  //     </div>
+  //   );
+  // });
+  console.log(displayCards);
+
   if (loading) {
     return <Loading />;
   }
   return (
     <>
-      <div className="card-container">{displayCards}</div>
+      <div className="card-container">
+        {displayCards.map((card) => (
+          <Card key={card.cardId} {...card} />
+        ))}
+      </div>
       <Pagination numberOfPages={numberOfPages} />
     </>
   );
