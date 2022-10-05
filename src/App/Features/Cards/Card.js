@@ -6,9 +6,9 @@ const Card = (card) => {
   return (
     <div className="card">
       <h1>{name}</h1>
-      <img src={img} alt={name} />
+      <img src={img} alt={name} className="card-img" />
 
-      <>{type}</>
+      {/* <>{type}</> */}
     </div>
   );
 };
