@@ -8,11 +8,14 @@ const Card = (card) => {
     .replace("(@ Gold left!)", "");
   return (
     <div className="card">
-      <h1>{name}</h1>
+      <h1 className="card-name">{name}</h1>
       <img src={img} alt={name} className="card-img" />
 
       {/* <>{type}</> */}
-      <div dangerouslySetInnerHTML={{ __html: textCleaned }} />
+      <div
+        dangerouslySetInnerHTML={{ __html: textCleaned }}
+        className="card-text"
+      />
     </div>
   );
 };

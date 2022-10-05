@@ -7,6 +7,7 @@ import { nextPage, prevPage } from "./App/Features/Pagination/paginateSlice";
 import Loading from "./App/Features/Loader/Loading.js";
 import Card from "./App/Features/Cards/Card";
 import Pagination from "./App/Features/Pagination/Pagination";
+import Header from "./App/Features/Header/Header";
 
 function App() {
   //STATE
@@ -59,6 +60,7 @@ function App() {
   }
   return (
     <>
+      <Header />
       <div className="card-container">
         {displayCards.map((card) => (
           <Card key={card.cardId} {...card} />
