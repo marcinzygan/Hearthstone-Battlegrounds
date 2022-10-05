@@ -8,13 +8,15 @@ const Pagination = (props) => {
 
   return (
     <>
-      <button onClick={() => dispatch(prevPage())}>Prev</button>
-      <div>
-        {pageNumber} of {props.numberOfPages}
+      <div className="pagination">
+        <button onClick={() => dispatch(prevPage())}>Prev</button>
+        <div>
+          {pageNumber} of {props.numberOfPages}
+        </div>
+        <button onClick={() => dispatch(nextPage(props.numberOfPages))}>
+          next
+        </button>
       </div>
-      <button onClick={() => dispatch(nextPage(props.numberOfPages))}>
-        next
-      </button>
     </>
   );
 };

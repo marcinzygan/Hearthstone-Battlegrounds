@@ -39,3 +39,11 @@ img {
 h1 {
   font-size: 1rem;
 }
+
+.pagination {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
