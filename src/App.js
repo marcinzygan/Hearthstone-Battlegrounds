@@ -39,15 +39,12 @@ function App() {
       });
   }, [dispatch]);
   // PAGINATION LOGIC
-  const cardsPerPage = 10;
+  const cardsPerPage = 2;
   const cardsSeen = pageNumber * cardsPerPage;
   const numberOfPages = Math.ceil(cards.length / cardsPerPage);
 
   //Display cards function
-  const displayCards = cards.slice(
-    cardsSeen - 10,
-    cardsPerPage - 10 + cardsSeen
-  );
+  const displayCards = cards.slice(cardsSeen - 2, cardsPerPage - 2 + cardsSeen);
   // .map((card) => {
   //   return (
   //     <div>
