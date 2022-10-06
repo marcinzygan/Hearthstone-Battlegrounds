@@ -15,9 +15,10 @@
   --fs-h1: 1rem;
   --fs-body: 0.8rem;
 }
-
-body {
+#root {
   height: 100vh;
+}
+body {
   font-size: var(--fs-body);
 }
 img {
@@ -36,13 +37,14 @@ img {
 }
 /* CARD COMPONENT */
 .card-container {
+  height: 20rem;
   margin: 1rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1rem;
   /* display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr)); */
+  grid-template-columns: repeat(2, minmax(150px, 1fr)); */
 }
 .card {
   margin-top: 2rem;
@@ -51,11 +53,12 @@ img {
   align-items: center;
 }
 .card-name {
-  max-width: 8rem;
+  width: 8rem;
+  height: 5rem;
   font-size: var(--fs-h1);
 }
 .card-img {
-  width: 8rem;
+  width: 9rem;
   height: 13rem;
 }
 .card-text {
@@ -63,9 +66,16 @@ img {
   max-width: 8rem;
 }
 .pagination {
-  margin-top: 3rem;
+  margin-top: 10rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.footer {
+  position: fixed;
+  background-color: aqua;
+  height: 10vh;
+  width: 100%;
+  bottom: 0;
 }

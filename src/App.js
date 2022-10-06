@@ -3,11 +3,11 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { loadingData, notLoadingData } from "./App/Features/Loader/loaderSlice";
 import { setData } from "./App/Features/Cards/cardsSlice";
-import { nextPage, prevPage } from "./App/Features/Pagination/paginateSlice";
 import Loading from "./App/Features/Loader/Loading.js";
 import Card from "./App/Features/Cards/Card";
 import Pagination from "./App/Features/Pagination/Pagination";
 import Header from "./App/Features/Header/Header";
+import Footer from "./App/Features/Footer/Footer";
 
 function App() {
   //STATE
@@ -67,6 +67,7 @@ function App() {
         ))}
       </div>
       <Pagination numberOfPages={numberOfPages} />
+      <Footer />
     </>
   );
 }
