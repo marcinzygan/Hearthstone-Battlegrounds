@@ -56,13 +56,22 @@ img {
   font-size: var(--fs-body);
   text-align: center;
   background: #32302b;
+  color: #ffc700;
   border: none;
   border-radius: 997px;
-  color: #ffc700;
 }
+.start-btn {
+  background: #ffc700;
+  color: #32302b;
+}
+
 .btn:hover {
   background: #ffc700;
   color: #32302b;
+}
+.start-btn:hover {
+  transform: scale(1.2);
+  transition: transform 0.5s ease-in-out;
 }
 /* CARD COMPONENT */
 .card-container {

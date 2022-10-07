@@ -5,7 +5,7 @@ const Header = () => {
     <div className="header">
       <div className="header-background"></div>
       <div className="header__menu-container">
-        <button className="btn">Start</button>
+        <button className="btn start-btn">Start</button>
         <img src={hsLogo} alt="hearthstone logo" className="logo" />
         <button className="btn">About</button>
       </div>

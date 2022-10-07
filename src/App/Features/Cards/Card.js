@@ -1,7 +1,7 @@
 import React from "react";
 
 const Card = (card) => {
-  const { name, text, img, type, cardSet, cardId } = card;
+  const { name, text, img, type, cardSet, cardId, race } = card;
 
   // const textCleaned = text
   //   .replace("[x]", "")
@@ -26,7 +26,7 @@ const Card = (card) => {
       <h1 className="card-name">{name}</h1>
       <img src={img} alt={name} className="card-img" />
 
-      {/* <>{type}</> */}
+      <div className="card-race"> {!race ? `` : `Race: ${race}`}</div>
       <div
         dangerouslySetInnerHTML={{ __html: newText }}
         className="card-text"
