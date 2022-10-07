@@ -12,13 +12,15 @@
   --fw-regular: 400;
   --fw-bold: 700;
 
-  --fs-h1: 1rem;
+  --fs-h1: 1.2rem;
   --fs-body: 0.8rem;
 }
 #root {
   height: 100vh;
+  background-color: #fadca2;
 }
 body {
+  font-family: var(--ff-primary);
   font-size: var(--fs-body);
 }
 img {
@@ -28,12 +30,39 @@ img {
 .header-background {
   height: 10rem;
   background-image: url(./Images/header.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
 }
 .header__menu-container {
-  height: 3rem;
+  /* height: 3rem; */
   background-image: url(./Images/wood.jpg);
   background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo {
+  height: 50px;
+  width: 60px;
+}
+.btn {
+  width: 50px;
+  height: 19px;
+  cursor: pointer;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--fs-body);
+  text-align: center;
+  background: #32302b;
+  border: none;
+  border-radius: 997px;
+  color: #ffc700;
+}
+.btn:hover {
+  background: #ffc700;
+  color: #32302b;
 }
 /* CARD COMPONENT */
 .card-container {
@@ -53,9 +82,12 @@ img {
   align-items: center;
 }
 .card-name {
+  color: #892fa8;
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  text-shadow: 0 0 1px #000;
   width: 8rem;
   height: 5rem;
-  font-size: var(--fs-h1);
 }
 .card-img {
   width: 9rem;
@@ -74,7 +106,7 @@ img {
 }
 .footer {
   position: fixed;
-  background-color: aqua;
+  background-image: url(./Images/wood.jpg);
   height: 10vh;
   width: 100%;
   bottom: 0;
