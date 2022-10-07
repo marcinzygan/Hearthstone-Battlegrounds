@@ -25,12 +25,16 @@ const Card = (card) => {
     <div className="card">
       <h1 className="card-name">{name}</h1>
       <img src={img} alt={name} className="card-img" />
-
-      <div className="card-race"> {!race ? `` : `Race: ${race}`}</div>
-      <div
-        dangerouslySetInnerHTML={{ __html: newText }}
-        className="card-text"
-      />
+      <div className="card-details">
+        <div className="card-race">
+          <span className="race-span">Race:</span>
+          {!race ? ` none` : ` ${race}`}
+        </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: newText }}
+          className="card-text"
+        />
+      </div>
     </div>
   );
 };

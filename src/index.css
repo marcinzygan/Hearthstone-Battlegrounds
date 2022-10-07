@@ -14,6 +14,10 @@
 
   --fs-h1: 1.2rem;
   --fs-body: 0.8rem;
+
+  --tx-shadow: -1px -1px 0px #000, 0px -1px 0px #000, 1px -1px 0px #000,
+    -1px 0px 0px #000, 1px 0px 0px #000, -1px 1px 0px #000, 0px 1px 0px #000,
+    1px 1px 0px #000;
 }
 #root {
   height: 100vh;
@@ -97,6 +101,14 @@ img {
   text-shadow: 0 0 1px #000;
   width: 8rem;
   height: 5rem;
+}
+.card-race {
+  margin-top: 1rem;
+}
+.race-span {
+  font-weight: var(--fw-bold);
+  color: white;
+  text-shadow: var(--tx-shadow);
 }
 .card-img {
   width: 9rem;
