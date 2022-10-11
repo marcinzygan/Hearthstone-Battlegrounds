@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   pageNumber: 1,
+  showPagination: false,
 };
 
 const paginateSlice = createSlice({
@@ -24,8 +25,11 @@ const paginateSlice = createSlice({
       state.pageNumber -= 1;
       window.scrollTo(0, 0);
     },
+    showPagination: (state) => {
+      state.showPagination = true;
+    },
   },
 });
 
 export default paginateSlice.reducer;
-export const { nextPage, prevPage } = paginateSlice.actions;
+export const { nextPage, prevPage, showPagination } = paginateSlice.actions;
