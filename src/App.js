@@ -16,11 +16,13 @@ import Card from "./App/Features/Cards/Card";
 import Pagination from "./App/Features/Pagination/Pagination";
 import Header from "./App/Features/Header/Header";
 import Footer from "./App/Features/Footer/Footer";
+import Welcome from "./App/Features/WelcomeScreen/Welcome";
 
 function App() {
   //STATE
   const cards = useSelector((state) => state.cards.cards);
   const loading = useSelector((state) => state.loader.loading);
+  const appStarted = useSelector((state) => state.loader.appStarted);
   const pageNumber = useSelector((state) => state.page.pageNumber);
   const showPaginationButtons = useSelector(
     (state) => state.page.showPagination
@@ -101,6 +103,7 @@ function App() {
     <>
       <Header callAPI={callAPI} />
       <div className="card-container">
+        {!appStarted && <Welcome />}
         {loading && <Loading />}
         {displayCards.map((card) => (
           <Card key={card.cardId} {...card} />
