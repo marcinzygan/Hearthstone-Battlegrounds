@@ -28,8 +28,12 @@ const paginateSlice = createSlice({
     showPagination: (state) => {
       state.showPagination = true;
     },
+    setPage: (state, data) => {
+      state.pageNumber = data.payload;
+    },
   },
 });
 
 export default paginateSlice.reducer;
-export const { nextPage, prevPage, showPagination } = paginateSlice.actions;
+export const { nextPage, prevPage, showPagination, setPage } =
+  paginateSlice.actions;

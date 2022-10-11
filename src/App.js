@@ -1,8 +1,15 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { loadingData, notLoadingData } from "./App/Features/Loader/loaderSlice";
-import { showPagination } from "./App/Features/Pagination/paginateSlice";
+import {
+  loadingData,
+  notLoadingData,
+  appStarted,
+} from "./App/Features/Loader/loaderSlice";
+import {
+  setPage,
+  showPagination,
+} from "./App/Features/Pagination/paginateSlice";
 import { setData } from "./App/Features/Cards/cardsSlice";
 import Loading from "./App/Features/Loader/Loading.js";
 import Card from "./App/Features/Cards/Card";
@@ -37,6 +44,8 @@ function App() {
 
         dispatch(setData(data));
         dispatch(showPagination());
+        dispatch(setPage(1));
+        dispatch(appStarted());
         console.log(data);
         dispatch(notLoadingData());
       })
