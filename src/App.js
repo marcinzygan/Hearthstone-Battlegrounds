@@ -22,7 +22,7 @@ function App() {
   //STATE
   const cards = useSelector((state) => state.cards.cards);
   const loading = useSelector((state) => state.loader.loading);
-  const appStart = useSelector((state) => state.loader.appStarted);
+  const appStarting = useSelector((state) => state.loader.appStarted);
   const pageNumber = useSelector((state) => state.page.pageNumber);
   const showPaginationButtons = useSelector(
     (state) => state.page.showPagination
@@ -103,7 +103,7 @@ function App() {
     <>
       <Header callAPI={callAPI} />
       <div className="card-container">
-        {/* {!appStarted && <Welcome />} */}
+        {!appStarting && !loading && <Welcome />}
         {loading && <Loading />}
         {displayCards.map((card) => (
           <Card key={card.cardId} {...card} />
