@@ -94,13 +94,14 @@ function App() {
   // });
   console.log(displayCards);
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
   return (
     <>
       <Header callAPI={callAPI} />
       <div className="card-container">
+        {loading && <Loading />}
         {displayCards.map((card) => (
           <Card key={card.cardId} {...card} />
         ))}
