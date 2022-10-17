@@ -106,11 +106,12 @@ img {
   padding: 9px 24px;
   padding: 0.6rem 1.5rem;
   text-transform: uppercase;
-  font-weight: 700;
-  text-shadow: 0 0 4px #000, 0 0 8px #000;
-  font-size: 20px;
-  font-size: 1.25rem;
+
+  font-size: 1.10rem;
   letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  color: white;
+  text-shadow: var(--tx-shadow);
 }
 
 .hs-border {
@@ -120,19 +121,6 @@ img {
   height: 35px;
   min-height: 35px;
   width: 100%;
-
-  /* Font style */
-
-  text-transform: uppercase;
-  font-family: var(--ff-primary);
-  font-weight: normal;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: 1px 1px #000;
-  font-size: 17px;
-  line-height: 1;
-  letter-spacing: 1px;
-  text-align: center;
 }
 .hs-wrapper.gold {
   background-color: #d8be52;
@@ -174,7 +162,7 @@ img {
 .welcome__h1 {
   font-size: 2rem;
   text-align: center;
-  padding: 1rem;
+  padding-top: 1rem;
 }
 .welcome__txt {
   padding-top: 1rem;
@@ -222,7 +210,7 @@ img {
   max-width: 8rem;
 }
 .pagination {
-  margin-top: 10rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -234,4 +222,17 @@ img {
   height: 10vh;
   width: 100%;
   bottom: 0;
+}
+.footer__content {
+  margin: 1rem;
+}
+.footer__span {
+  display: block;
+  padding-top: 0.25rem;
+}
+.footer__link {
+  font-weight: var(--fw-bold);
+  color: white;
+  text-shadow: var(--tx-shadow);
+  text-decoration: none;
 }
