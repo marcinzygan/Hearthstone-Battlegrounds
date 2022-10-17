@@ -10,12 +10,12 @@ const Header = () => {
     <div className="header">
       <div className="header-background"></div>
       <div className="header__menu-container">
-        {appStarted && (
+        {/* {appStarted && (
           <>
             <button className="btn start-btn">First Page</button>
             <button className="btn start-btn">Last Page</button>
           </>
-        )}
+        )} */}
         <img src={hsLogo} alt="hearthstone logo" className="logo" />
       </div>
     </div>
