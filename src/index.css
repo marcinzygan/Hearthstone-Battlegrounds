@@ -77,6 +77,15 @@ img {
   transform: scale(1.2);
   transition: transform 0.5s ease-in-out;
 }
+/* WELCOME COMPONENT */
+.welcome__h1 {
+  text-align: center;
+  padding: 1rem;
+}
+.welcome__txt {
+  padding-top: 1rem;
+  line-height: 1.2;
+}
 /* CARD COMPONENT */
 .card-container {
   height: 20rem;
