@@ -13,13 +13,15 @@ const Pagination = (props) => {
           Prev
         </button>
         <div className="page__numbers">
-          {pageNumber} of {props.numberOfPages}
+          <p>
+            {pageNumber} of {props.numberOfPages}
+          </p>
         </div>
         <button
           className="btn"
           onClick={() => dispatch(nextPage(props.numberOfPages))}
         >
-          next
+          Next
         </button>
       </div>
     </>

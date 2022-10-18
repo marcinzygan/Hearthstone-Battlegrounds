@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   loadingData,
@@ -17,6 +17,7 @@ import Pagination from "./App/Features/Pagination/Pagination";
 import Header from "./App/Features/Header/Header";
 import Footer from "./App/Features/Footer/Footer";
 import Welcome from "./App/Features/WelcomeScreen/Welcome";
+import Modal from "./App/Features/Modal/Modal";
 
 function App() {
   //STATE
@@ -99,6 +100,7 @@ function App() {
   // if (loading) {
   //   return <Loading />;
   // }
+
   return (
     <>
       <Header callAPI={callAPI} />
@@ -108,6 +110,7 @@ function App() {
         {displayCards.map((card) => (
           <Card key={card.cardId} {...card} />
         ))}
+        <Modal />
       </div>
       {showPaginationButtons && <Pagination numberOfPages={numberOfPages} />}
       {!loading && <Footer />}

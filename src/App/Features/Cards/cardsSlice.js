@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cards: [],
+  currentImg: "",
 };
 
 const cardsSlice = createSlice({
@@ -30,7 +31,10 @@ const cardsSlice = createSlice({
       // Set new state
       state.cards = sortedAlphabetically;
     },
+    setImg: (state, data) => {
+      state.currentImg = data.payload;
+    },
   },
 });
-export const { setData } = cardsSlice.actions;
+export const { setData, setImg } = cardsSlice.actions;
 export default cardsSlice.reducer;
