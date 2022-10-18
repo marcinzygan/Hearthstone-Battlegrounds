@@ -110,7 +110,7 @@ function App() {
         ))}
       </div>
       {showPaginationButtons && <Pagination numberOfPages={numberOfPages} />}
-      <Footer />
+      {!loading && <Footer />}
     </>
   );
 }

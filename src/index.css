@@ -160,9 +160,9 @@ img {
   background: radial-gradient(circle, #fed83b 22%, #dba23e 83%, #9d6224);
 }
 /* WELCOME COMPONENT */
-/* .welcome-screen {
-  height: 21.6rem;
-} */
+.welcome-screen {
+  margin-bottom: 2rem;
+}
 .welcome__h1 {
   font-size: 2rem;
   text-align: center;
@@ -215,11 +215,6 @@ img {
 }
 /* PAGINATION */
 .pagination {
-  /* position: fixed;
-  width: 100%;
-  height: 10vh;
-  left: 0;
-  bottom: 20; */
   /* margin-top: 0.5rem;
   margin-bottom: 0.5rem; */
   display: flex;
@@ -233,10 +228,10 @@ img {
 }
 /* FOOTER */
 .footer {
-  position: fixed;
+  /* position: fixed; */
 
   background-image: url(./Images/wood.jpg);
-  height: 10vh;
+  height: 20vh;
   width: 100%;
   bottom: 0;
 }
