@@ -32,8 +32,12 @@ img {
   width: 100%;
 }
 /* Header */
+.header {
+  min-height: 20vh;
+  overflow: hidden;
+}
 .header-background {
-  height: 10rem;
+  height: 8rem;
   background-image: url(./Images/header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -187,11 +191,12 @@ img {
 }
 .loading__img {
   max-width: 20rem;
-  animation: rotation 6s ease-in-out infinite;
+  animation: rotation 10s infinite;
 }
 /* WELCOME COMPONENT */
 .welcome-screen {
   margin-bottom: 2rem;
+  padding: 1rem;
 }
 .welcome__h1 {
   font-size: 2rem;
@@ -204,19 +209,21 @@ img {
 }
 /* CARD COMPONENT */
 .card-container {
-  height: 100vh;
+  min-height: 60vh;
   /* margin: 1rem; */
+  padding: 1rem;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 1rem;
-  font-size: var(--fs-h1);
-
+  font-size: var(--fs-body);
+  /* overflow: scroll; */
   /* display: grid;
   grid-template-columns: repeat(2, minmax(150px, 1fr)); */
 }
 .card {
   /* margin-top: 2rem; */
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -228,6 +235,7 @@ img {
   text-shadow: 0 0 1px #000;
   max-width: 8rem;
   height: 3rem;
+  text-align: center;
   margin-bottom: 1rem;
 }
 .card-race {
@@ -251,12 +259,14 @@ img {
 }
 /* PAGINATION */
 .pagination {
-  position: fixed;
-  bottom: 12vh;
+  width: 100%;
+  /* position: fixed; */
+  /* bottom: 12vh;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 0); */
   /* margin-top: 0.5rem;
   margin-bottom: 0.5rem; */
+  padding: 1rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -265,7 +275,10 @@ img {
 .page__numbers {
   padding-left: 1rem;
   padding-right: 1rem;
-  display: flex;
+  text-align: center;
+}
+.page__span {
+  font-weight: var(--fw-bold);
 }
 /* MODAL */
 .modal-container {
@@ -303,10 +316,10 @@ img {
 }
 /* FOOTER */
 .footer {
-  position: fixed;
+  /* position: fixed; */
 
   background-image: url(./Images/wood.jpg);
-  height: 10vh;
+  min-height: 20vh;
   width: 100%;
   bottom: 0;
 }

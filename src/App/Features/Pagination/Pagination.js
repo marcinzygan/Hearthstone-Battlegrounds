@@ -19,7 +19,9 @@ const Pagination = (props) => {
         </button>
         <div className="page__numbers">
           <p>
-            {pageNumber} of {props.numberOfPages}
+            <span className="page__span">{pageNumber} </span>
+            of
+            <span className="page__span"> {props.numberOfPages}</span>
           </p>
         </div>
         <button
