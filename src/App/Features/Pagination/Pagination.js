@@ -1,18 +1,18 @@
 import React from "react";
 import { Icon } from "@iconify/react";
-import { nextPage, prevPage } from "./paginateSlice";
+import { nextPage, prevPage, firstPage, lastPage } from "./paginateSlice";
 import { useSelector, useDispatch } from "react-redux";
 
 const Pagination = (props) => {
   const pageNumber = useSelector((state) => state.page.pageNumber);
   const dispatch = useDispatch();
-  console.log(props.numberOfPages);
+  // console.log(props.numberOfPages);
 
   return (
     <>
       <div className="pagination">
         <button className="btn">
-          <Icon icon="uiw:d-arrow-left" />
+          <Icon icon="uiw:d-arrow-left" onClick={() => dispatch(firstPage())} />
         </button>
         <button className="btn" onClick={() => dispatch(prevPage())}>
           <Icon icon="bx:left-arrow-circle" className="iconify" />
@@ -29,7 +29,10 @@ const Pagination = (props) => {
           <Icon icon="bx:right-arrow-circle" className="iconify" />
         </button>
         <button className="btn">
-          <Icon icon="uiw:d-arrow-right" />
+          <Icon
+            icon="uiw:d-arrow-right"
+            onClick={() => dispatch(lastPage(props.numberOfPages))}
+          />
         </button>
       </div>
     </>

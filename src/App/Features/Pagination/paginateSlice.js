@@ -10,7 +10,7 @@ const paginateSlice = createSlice({
   initialState,
   reducers: {
     nextPage: (state, data) => {
-      console.log(data.payload);
+      // console.log(data.payload);
 
       if (state.pageNumber >= data.payload) {
         return;
@@ -25,6 +25,12 @@ const paginateSlice = createSlice({
       state.pageNumber -= 1;
       window.scrollTo(0, 0);
     },
+    firstPage: (state) => {
+      state.pageNumber = 1;
+    },
+    lastPage: (state, data) => {
+      state.pageNumber = data.payload;
+    },
     showPagination: (state) => {
       state.showPagination = true;
     },
@@ -35,5 +41,11 @@ const paginateSlice = createSlice({
 });
 
 export default paginateSlice.reducer;
-export const { nextPage, prevPage, showPagination, setPage } =
-  paginateSlice.actions;
+export const {
+  nextPage,
+  prevPage,
+  showPagination,
+  setPage,
+  lastPage,
+  firstPage,
+} = paginateSlice.actions;
