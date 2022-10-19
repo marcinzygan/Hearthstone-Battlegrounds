@@ -1,6 +1,8 @@
 import React from "react";
+import { Icon } from "@iconify/react";
 import { nextPage, prevPage } from "./paginateSlice";
 import { useSelector, useDispatch } from "react-redux";
+
 const Pagination = (props) => {
   const pageNumber = useSelector((state) => state.page.pageNumber);
   const dispatch = useDispatch();
@@ -9,6 +11,7 @@ const Pagination = (props) => {
   return (
     <>
       <div className="pagination">
+        <button className="btn">First Page</button>
         <button className="btn" onClick={() => dispatch(prevPage())}>
           Prev
         </button>
@@ -23,6 +26,7 @@ const Pagination = (props) => {
         >
           Next
         </button>
+        <button className="btn">Last</button>
       </div>
     </>
   );
