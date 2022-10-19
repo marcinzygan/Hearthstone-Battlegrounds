@@ -51,19 +51,26 @@ img {
   width: 60px;
   animation: bounce 15s ease-in-out infinite;
 }
+.iconify {
+  width: 18px;
+  height: 18px;
+}
 .btn {
-  width: 80px;
+  width: 50px;
   height: 25px;
   cursor: pointer;
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: var(--fs-body);
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #32302b;
   color: #ffc700;
   border: none;
   border-radius: 997px;
+  margin: 0.1rem;
 }
 .start-btn {
   width: 50px;
