@@ -106,7 +106,7 @@ function App() {
       {!loading && <Header callAPI={callAPI} />}
       {!appStarting && !loading && <Welcome callAPI={callAPI} />}
       {loading && <Loading />}
-      {!loading && (
+      {!loading && appStarting && (
         <div className="card-container">
           {displayCards.map((card) => (
             <Card key={card.cardId} {...card} />

@@ -195,6 +195,7 @@ img {
 }
 /* WELCOME COMPONENT */
 .welcome-screen {
+  min-height: 60vh;
   margin-bottom: 2rem;
   padding: 1rem;
 }
@@ -209,9 +210,9 @@ img {
 }
 /* CARD COMPONENT */
 .card-container {
-  min-height: 60vh;
+  min-height: 40vh;
   /* margin: 1rem; */
-  padding: 1rem;
+  padding: 3rem 1rem 0 1rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -222,8 +223,6 @@ img {
   grid-template-columns: repeat(2, minmax(150px, 1fr)); */
 }
 .card {
-  /* margin-top: 2rem; */
-  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -259,6 +258,7 @@ img {
 }
 /* PAGINATION */
 .pagination {
+  min-height: 20vh;
   width: 100%;
   /* position: fixed; */
   /* bottom: 12vh;
