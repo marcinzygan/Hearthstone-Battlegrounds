@@ -237,7 +237,7 @@ img {
 }
 /* MODAL */
 .modal-container {
-  background-color: rgba(255, 255, 255, 0.811);
+  background-color: #fadda2e4;
   position: fixed;
   top: 0;
   right: 0;
@@ -247,14 +247,27 @@ img {
   overflow-x: auto;
   pointer-events: none;
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transition: all 0.3s ease-in;
 }
 .modal-open {
+  padding: 1rem;
   visibility: visible;
   pointer-events: all;
   z-index: 2000;
   opacity: 1;
   padding-top: 2rem;
+}
+.modal__btn {
+  display: block;
+  margin-left: auto;
+}
+.modal__img {
+  position: relative;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 15rem;
+  height: 20rem;
 }
 /* FOOTER */
 .footer {

@@ -9,8 +9,10 @@ const Modal = () => {
   };
   return (
     <div className="modal-container">
-      <button onClick={closeModal}>X</button>
-      <img src={currentImage}></img>
+      <button onClick={closeModal} className="btn modal__btn">
+        Close
+      </button>
+      <img src={currentImage} className="modal__img"></img>
     </div>
   );
 };
