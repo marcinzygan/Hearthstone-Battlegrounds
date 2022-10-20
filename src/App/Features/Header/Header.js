@@ -28,8 +28,9 @@ const Header = () => {
     <div className="header">
       <div className="header-background"></div>
       <div className="header__menu-container">
+        <img src={hsLogo} alt="hearthstone logo" className="logo" />
         {appStarted && (
-          <>
+          <div className="filter__container">
             <select onChange={handleChange}>
               <option value="All">All</option>
               <option value="Murloc">Murloc</option>
@@ -49,9 +50,8 @@ const Header = () => {
               Filter
             </button>
             <button className="btn start-btn">Last Page</button>
-          </>
+          </div>
         )}
-        <img src={hsLogo} alt="hearthstone logo" className="logo" />
       </div>
     </div>
   );
