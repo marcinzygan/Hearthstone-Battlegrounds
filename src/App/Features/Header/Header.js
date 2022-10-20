@@ -2,11 +2,13 @@ import React from "react";
 import hsLogo from "../../../Images/hslogo.png";
 import murlocSound from "../../../Sounds/murloc.mp3";
 import { useSelector, useDispatch } from "react-redux";
+import { setPage } from "../Pagination/paginateSlice";
 import { filterData } from "../Cards/cardsSlice";
 import { useState } from "react";
 
 const Header = () => {
   const appStarted = useSelector((state) => state.loader.appStarted);
+
   const dispatch = useDispatch();
 
   const [filterOption, setFilterOption] = useState("All");
@@ -17,6 +19,10 @@ const Header = () => {
 
     setFilterOption(value);
     console.log(filterOption);
+  };
+  const filterOptions = function () {
+    dispatch(setPage(1));
+    dispatch(filterData(filterOption));
   };
   return (
     <div className="header">
@@ -29,10 +35,16 @@ const Header = () => {
               <option value="Murloc">Murloc</option>
               <option value="Pirate">Pirate</option>
               <option value="Naga">Naga</option>
+              <option value="Demon">Demon</option>
+              <option value="Quilboar">Quilboar</option>
+              <option value="Dragon">Dragon</option>
+              <option value="Beast">Beast</option>
+              <option value="Mech">Mech</option>
+              <option value="none">none</option>
             </select>
             <button
               className="btn start-btn"
-              onClick={() => dispatch(filterData(filterOption))}
+              onClick={() => dispatch(filterOptions)}
             >
               Filter
             </button>

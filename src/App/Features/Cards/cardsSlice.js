@@ -1,4 +1,5 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+import { setPage } from "../Pagination/paginateSlice";
 
 const initialState = {
   cards: [],
@@ -43,6 +44,10 @@ const cardsSlice = createSlice({
 
       if (data.payload === "All") {
         state.cards = state.originalCardsState;
+      } else if (data.payload === "none") {
+        state.cards = state.originalCardsState;
+        const filteredCards = state.cards.filter((card) => !card.race);
+        state.cards = filteredCards;
       } else {
         state.cards = state.originalCardsState;
         const filteredCards = state.cards.filter(
