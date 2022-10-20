@@ -3,13 +3,20 @@ import hsLogo from "../../../Images/hslogo.png";
 import murlocSound from "../../../Sounds/murloc.mp3";
 import { useSelector, useDispatch } from "react-redux";
 import { filterData } from "../Cards/cardsSlice";
+import { useState } from "react";
+
 const Header = () => {
   const appStarted = useSelector((state) => state.loader.appStarted);
   const dispatch = useDispatch();
+
+  const [filterOption, setFilterOption] = useState("All");
   const handleChange = function (e) {
     e.preventDefault();
     let { name, value } = e.target;
     console.log(name, value);
+
+    setFilterOption(value);
+    console.log(filterOption);
   };
   return (
     <div className="header">
@@ -21,11 +28,11 @@ const Header = () => {
               <option value="All">All</option>
               <option value="Murloc">Murloc</option>
               <option value="Pirate">Pirate</option>
-              <option value="Deamon">Deamon</option>
+              <option value="Naga">Naga</option>
             </select>
             <button
               className="btn start-btn"
-              onClick={() => dispatch(filterData("Murloc"))}
+              onClick={() => dispatch(filterData(filterOption))}
             >
               Filter
             </button>

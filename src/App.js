@@ -10,7 +10,7 @@ import {
   setPage,
   showPagination,
 } from "./App/Features/Pagination/paginateSlice";
-import { setData } from "./App/Features/Cards/cardsSlice";
+import { filterData, setData } from "./App/Features/Cards/cardsSlice";
 import Loading from "./App/Features/Loader/Loading.js";
 import Card from "./App/Features/Cards/Card";
 import Pagination from "./App/Features/Pagination/Pagination";
@@ -46,6 +46,7 @@ function App() {
         const data = response.data;
 
         dispatch(setData(data));
+
         dispatch(showPagination());
         dispatch(setPage(1));
         dispatch(appStarted());

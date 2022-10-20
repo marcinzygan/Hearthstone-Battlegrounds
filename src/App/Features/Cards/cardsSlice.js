@@ -1,8 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const initialState = {
   cards: [],
   currentImg: "",
+  originalCardsState: [],
 };
 
 const cardsSlice = createSlice({
@@ -11,6 +12,7 @@ const cardsSlice = createSlice({
   reducers: {
     setData: (state, data) => {
       //Filter out only cards with minion type
+
       const newState = data.payload
         .map((card, index) => {
           return card;
@@ -27,17 +29,27 @@ const cardsSlice = createSlice({
       const sortedAlphabetically = [...noDuplicates].sort((a, b) =>
         a.name.localeCompare(b.name)
       );
-      console.log(sortedAlphabetically);
+
       // Set new state
       state.cards = sortedAlphabetically;
+      //Set original state for filterOptions
+      state.originalCardsState = sortedAlphabetically;
     },
     filterData: (state, data) => {
-      const filteredCards = state.cards.filter(
-        (card) => card.race === data.payload
-      );
-      console.log(filteredCards);
+      // console.log(current(state.cards));
+      // state.originalState = [...state.cards];
+      // const newState = state.originalState;
+      // console.log(newState);
 
-      state.cards = filteredCards;
+      if (data.payload === "All") {
+        state.cards = state.originalCardsState;
+      } else {
+        state.cards = state.originalCardsState;
+        const filteredCards = state.cards.filter(
+          (card) => card.race === data.payload
+        );
+        state.cards = filteredCards;
+      }
     },
     setImg: (state, data) => {
       state.currentImg = data.payload;
