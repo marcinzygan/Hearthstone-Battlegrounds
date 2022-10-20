@@ -15,11 +15,6 @@ const Card = (card) => {
     console.log("click");
   };
 
-  const closeModal = function () {
-    const modal = document.querySelector(".modal-container");
-    modal.classList.remove("modal-open");
-  };
-
   // const textCleaned = text
   //   .replace("[x]", "")
   //   .replaceAll("_", "")

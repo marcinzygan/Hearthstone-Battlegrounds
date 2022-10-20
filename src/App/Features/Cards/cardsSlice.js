@@ -31,10 +31,18 @@ const cardsSlice = createSlice({
       // Set new state
       state.cards = sortedAlphabetically;
     },
+    filterData: (state, data) => {
+      const filteredCards = state.cards.filter(
+        (card) => card.race === data.payload
+      );
+      console.log(filteredCards);
+
+      state.cards = filteredCards;
+    },
     setImg: (state, data) => {
       state.currentImg = data.payload;
     },
   },
 });
-export const { setData, setImg } = cardsSlice.actions;
+export const { setData, setImg, filterData } = cardsSlice.actions;
 export default cardsSlice.reducer;
