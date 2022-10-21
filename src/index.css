@@ -50,8 +50,18 @@ img {
   align-items: center;
   justify-content: flex-end;
 }
+.favourites__container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100px;
+}
 .filter__container {
   width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 .logo {
   margin-right: auto;
@@ -206,7 +216,7 @@ img {
 .welcome__h1 {
   font-size: 2rem;
   text-align: center;
-  padding-top: 1rem;
+  padding: 1rem 0 1rem 0;
 }
 .welcome__txt {
   padding-top: 1rem;
@@ -360,5 +370,15 @@ img {
   }
   to {
     transform: rotate(359deg);
+  }
+}
+/* MEDIA QUERIES */
+
+@media (min-width: 400px) {
+  .welcome-screen {
+    padding: 3rem;
+  }
+  .hs-wrapper.gold {
+    margin-top: 4rem;
   }
 }

@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setPage } from "../Pagination/paginateSlice";
 import { filterData } from "../Cards/cardsSlice";
 import { useState } from "react";
-
+import { Icon } from "@iconify/react";
 const Header = () => {
   const appStarted = useSelector((state) => state.loader.appStarted);
 
@@ -27,6 +27,13 @@ const Header = () => {
     <div className="header">
       <div className="header-background"></div>
       <div className="header__menu-container">
+        {appStarted && (
+          <div className="favourites__container">
+            <button className="btn">
+              <Icon icon="fa-solid:heart" />
+            </button>
+          </div>
+        )}
         <img src={hsLogo} alt="hearthstone logo" className="logo" />
         {appStarted && (
           <div className="filter__container">
@@ -43,10 +50,7 @@ const Header = () => {
               <option value="Elemental">Elemental</option>
               <option value="none">none</option>
             </select>
-            <button
-              className="btn start-btn"
-              onClick={() => dispatch(filterOptions)}
-            >
+            <button className="btn" onClick={() => dispatch(filterOptions)}>
               Filter
             </button>
             {/* <button className="btn start-btn">Last Page</button> */}
