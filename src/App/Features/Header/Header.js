@@ -1,6 +1,5 @@
 import React from "react";
 import hsLogo from "../../../Images/hslogo.png";
-import murlocSound from "../../../Sounds/murloc.mp3";
 import { useSelector, useDispatch } from "react-redux";
 import { setPage } from "../Pagination/paginateSlice";
 import { filterData } from "../Cards/cardsSlice";
