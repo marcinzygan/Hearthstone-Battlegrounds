@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setPage } from "../Pagination/paginateSlice";
 
 const initialState = {
   cards: [],

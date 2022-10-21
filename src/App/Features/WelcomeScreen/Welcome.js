@@ -1,6 +1,6 @@
 import React from "react";
 import murlocSound from "../../../Sounds/murloc.mp3";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Welcome = ({ callAPI }) => {
   const appStarted = useSelector((state) => state.loader.appStarted);
@@ -24,11 +24,11 @@ const Welcome = ({ callAPI }) => {
       </p>
       {!appStarted && (
         <div className="hs-wrapper gold" onClick={() => startButton()}>
-          <a className="hs-button gold">
+          <div className="hs-button gold">
             <span className="hs-border gold">
               <span className="hs-text gold">Start</span>
             </span>
-          </a>
+          </div>
         </div>
       )}
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Modal = () => {
   const currentImage = useSelector((state) => state.cards.currentImg);
@@ -12,7 +12,7 @@ const Modal = () => {
       <button onClick={closeModal} className="btn modal__btn">
         Close
       </button>
-      <img src={currentImage} className="modal__img"></img>
+      <img src={currentImage} className="modal__img" alt="card"></img>
     </div>
   );
 };

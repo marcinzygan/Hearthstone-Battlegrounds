@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   loadingData,
@@ -10,7 +9,7 @@ import {
   setPage,
   showPagination,
 } from "./App/Features/Pagination/paginateSlice";
-import { filterData, setData } from "./App/Features/Cards/cardsSlice";
+import { setData } from "./App/Features/Cards/cardsSlice";
 import Loading from "./App/Features/Loader/Loading.js";
 import Card from "./App/Features/Cards/Card";
 import Pagination from "./App/Features/Pagination/Pagination";

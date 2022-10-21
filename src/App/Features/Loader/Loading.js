@@ -5,7 +5,7 @@ const Loading = () => {
     <div className="loading__container">
       <p className="loading__txt">Loading</p>
 
-      <img src={hsLogo} className="loading__img"></img>
+      <img src={hsLogo} className="loading__img" alt="loading"></img>
     </div>
   );
 };

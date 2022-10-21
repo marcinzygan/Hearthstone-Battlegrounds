@@ -1,10 +1,9 @@
 import React from "react";
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setImg } from "./cardsSlice";
 
 const Card = (card) => {
-  const { name, text, img, type, cardSet, cardId, race } = card;
+  const { name, text, img, race } = card;
   // MODAL
 
   const dispatch = useDispatch();
