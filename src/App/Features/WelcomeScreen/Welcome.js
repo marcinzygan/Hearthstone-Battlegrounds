@@ -15,13 +15,16 @@ const Welcome = ({ callAPI }) => {
   return (
     <div className="welcome-screen">
       <h1 className="welcome__h1">Welcome my friend !</h1>
-      <p className="welcome__txt">
-        In this application you can browse and learn all avaiable hearthstone
-        battlegrounds cards.
-      </p>
-      <p className="welcome__txt">
-        Just click start button and happy learning !
-      </p>
+      <div className="welcome__txt-container">
+        {" "}
+        <p className="welcome__txt">
+          In this application you can browse and learn all avaiable hearthstone
+          battlegrounds cards.
+        </p>
+        <p className="welcome__txt">
+          Just click start button and happy learning !
+        </p>
+      </div>
       {!appStarted && (
         <div className="hs-wrapper gold" onClick={() => startButton()}>
           <div className="hs-button gold">

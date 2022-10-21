@@ -115,11 +115,11 @@ function App() {
           {displayCards.map((card) => (
             <Card key={card.cardId} {...card} />
           ))}
-          <Modal />
         </div>
       )}
       {showPaginationButtons && <Pagination numberOfPages={numberOfPages} />}
       {!loading && <Footer />}
+      {!loading && appStarting && <Modal />}
     </>
   );
 }
