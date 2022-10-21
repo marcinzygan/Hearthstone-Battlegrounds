@@ -41,6 +41,7 @@ const Header = () => {
               <option value="Dragon">Dragon</option>
               <option value="Beast">Beast</option>
               <option value="Mech">Mech</option>
+              <option value="Elemental">Elemental</option>
               <option value="none">none</option>
             </select>
             <button
@@ -49,7 +50,7 @@ const Header = () => {
             >
               Filter
             </button>
-            <button className="btn start-btn">Last Page</button>
+            {/* <button className="btn start-btn">Last Page</button> */}
           </div>
         )}
       </div>
