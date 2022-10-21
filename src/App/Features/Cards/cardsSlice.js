@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cards: [],
@@ -109,7 +109,7 @@ const cardsSlice = createSlice({
 
       // const currentCard = state.cards.find((card) => card.cardId === id);
       state.favouritesList = state.favouritesList.filter(
-        (card) => card.cardId != id
+        (card) => card.cardId !== id
       );
     },
   },

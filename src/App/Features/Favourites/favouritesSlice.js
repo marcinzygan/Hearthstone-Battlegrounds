@@ -8,7 +8,11 @@ const initialState = {
 const favouriteSlice = createSlice({
   name: "favourites",
   initialState,
-  reducers: {},
+  reducers: {
+    setFav: (state, data) => {
+      console.log("hello");
+    },
+  },
 });
 
 export const {} = favouriteSlice.actions;
