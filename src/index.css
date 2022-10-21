@@ -236,7 +236,7 @@ img {
   /* margin: 1rem; */
   padding: 3rem 1rem 0 1rem;
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
   gap: 1rem;
   font-size: var(--fs-body);
@@ -248,6 +248,8 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: red;
+  padding: 1rem 0.5rem 1rem 0.5rem;
 }
 .card-name {
   color: #892fa8;
@@ -277,6 +279,12 @@ img {
 .card-text {
   margin-top: 1rem;
   max-width: 8rem;
+}
+.card-buttons {
+  margin-top: 1rem;
+  flex-grow: 1;
+  display: flex;
+  align-items: flex-end;
 }
 /* PAGINATION */
 .pagination {

@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setImg } from "./cardsSlice";
-
+import { setImg, setFavourite, removeFavourite } from "./cardsSlice";
+import { Icon } from "@iconify/react";
 const Card = (card) => {
-  const { name, text, img, race } = card;
+  const { cardId, name, text, img, race, isFav } = card;
   // MODAL
 
   const dispatch = useDispatch();
@@ -13,7 +13,9 @@ const Card = (card) => {
     dispatch(setImg(img));
     console.log("click");
   };
-
+  const addToFavourite = function () {
+    dispatch(setFavourite(cardId));
+  };
   // const textCleaned = text
   //   .replace("[x]", "")
   //   .replaceAll("_", "")
@@ -52,6 +54,21 @@ const Card = (card) => {
           dangerouslySetInnerHTML={{ __html: newText }}
           className="card-text"
         />
+      </div>
+      <div className="card-buttons">
+        <button className="btn ">
+          {!isFav ? (
+            <Icon
+              icon="fa-solid:heart"
+              onClick={() => addToFavourite(cardId)}
+            />
+          ) : (
+            <Icon
+              icon="fa-solid:heart-broken"
+              onClick={() => dispatch(removeFavourite(cardId))}
+            />
+          )}
+        </button>
       </div>
     </div>
   );
