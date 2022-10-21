@@ -35,7 +35,11 @@ function App() {
     console.log("API CALLED");
     const options = {
       method: "GET",
-      url: "http://localhost:8000/cards",
+      url: "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/battlegrounds",
+      headers: {
+        "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+        "X-RapidAPI-Host": "omgvamp-hearthstone-v1.p.rapidapi.com",
+      },
     };
 
     axios
