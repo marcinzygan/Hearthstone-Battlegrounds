@@ -4,7 +4,7 @@ const initialState = {
   cards: [],
   currentImg: "",
   originalCardsState: [],
-  favouritesList: [],
+  favouritesList: JSON.parse(localStorage.getItem("Favorites")) || [],
 };
 
 const cardsSlice = createSlice({
@@ -35,6 +35,35 @@ const cardsSlice = createSlice({
       state.cards = sortedAlphabetically;
       //Set original state for filterOptions
       state.originalCardsState = sortedAlphabetically;
+      //Check if there is any Favourites cards and update state
+
+      const favCardsId = state.favouritesList.map((card) => {
+        return card.cardId;
+      });
+      console.log(favCardsId);
+      const checkID = state.originalCardsState.some(
+        (item) => item.cardId === favCardsId
+      );
+      console.log(checkID);
+      // const stateNew = state.originalCardsState.map((card) => {
+      //   //Find the id
+
+      //   if (card.cardId.includes(favCardsId)) {
+      //     return { ...card, isFav: true };
+      //   }
+      //   return { ...card };
+      // });
+      // state.originalCardsState = stateNew;
+      // state.cards = stateNew;
+      // const newDisplayedCards = state.originalCardsState.map((card) => {
+      //   if (card.includes(favCardsId)) {
+      //     return { card };
+      //   }
+      // });
+      // state.originalCardsState = newDisplayedCards;
+    },
+    setFavList: (state, data) => {
+      state.favouritesList = data.payload;
     },
     //FILTER DATA FEATURE
     filterData: (state, data) => {
@@ -67,11 +96,11 @@ const cardsSlice = createSlice({
         return { ...card };
       });
       //Find current card in state.cards and add it to favouritesList
-      const currentCard = state.cards.find((card) => card.cardId === id);
-      state.favouritesList.push(currentCard);
+
       // Display updated state
       state.cards = newDisplayedCards;
-
+      const currentCard = state.cards.find((card) => card.cardId === id);
+      state.favouritesList.push(currentCard);
       //Find current card in originalState , copy its properties and change isFav to true
       const newOriginalCards = state.originalCardsState.map((card) => {
         if (card.cardId === id) {
@@ -118,6 +147,12 @@ const cardsSlice = createSlice({
     },
   },
 });
-export const { setData, setImg, filterData, setFavourite, removeFavourite } =
-  cardsSlice.actions;
+export const {
+  setData,
+  setImg,
+  filterData,
+  setFavourite,
+  removeFavourite,
+  setFavList,
+} = cardsSlice.actions;
 export default cardsSlice.reducer;

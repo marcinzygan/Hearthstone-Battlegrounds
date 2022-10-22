@@ -1,4 +1,5 @@
 import axios from "axios";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   loadingData,
@@ -9,7 +10,7 @@ import {
   setPage,
   showPagination,
 } from "./App/Features/Pagination/paginateSlice";
-import { setData } from "./App/Features/Cards/cardsSlice";
+import { setData, setFavList } from "./App/Features/Cards/cardsSlice";
 import Loading from "./App/Features/Loader/Loading.js";
 import Card from "./App/Features/Cards/Card";
 import Pagination from "./App/Features/Pagination/Pagination";
@@ -24,11 +25,14 @@ function App() {
   const loading = useSelector((state) => state.loader.loading);
   const appStarting = useSelector((state) => state.loader.appStarted);
   const pageNumber = useSelector((state) => state.page.pageNumber);
+  const favouritesList = useSelector((state) => state.cards.favouritesList);
   const showPaginationButtons = useSelector(
     (state) => state.page.showPagination
   );
   const dispatch = useDispatch();
+  console.log(favouritesList);
 
+  //CALL API FUNCTION TO FETCH DATA
   const callAPI = function () {
     dispatch(loadingData());
 
@@ -62,6 +66,22 @@ function App() {
         dispatch(notLoadingData());
       });
   };
+
+  // USE EFFECT TO FETCH LOCAL STORAGE
+  React.useEffect(() => {
+    try {
+      const favorites = JSON.parse(localStorage.getItem("Favorites")) || [];
+      dispatch(setFavList(favorites));
+    } catch (e) {}
+  }, [dispatch]);
+
+  // SAVE AND REMOVE FAVORITES TO LOCAL STORAGE
+  // save and remove items to local storage everytime favorites array changes
+
+  React.useEffect(() => {
+    localStorage.setItem("Favorites", JSON.stringify(favouritesList));
+  }, [favouritesList]);
+
   // API CALL FOR BACKEND
   // useEffect(() => {
   //   const options = {
