@@ -86,20 +86,31 @@ const cardsSlice = createSlice({
     removeFavourite: (state, data) => {
       const id = data.payload;
       // Find current card in cardsState , copy its properties and change isFav to false
-      const newCards = state.cards.map((card) => {
+      const newDisplayedCards = state.cards.map((card) => {
         if (card.cardId === id) {
           return { ...card, isFav: card.isFav === false ? true : false };
         }
         return { ...card };
       });
-      //Set new original State and cardsState
+      //Set new cards state to diplay cards
+      state.cards = newDisplayedCards;
 
-      state.cards = newCards;
-      const currentCard = state.cards.find((card) => card.cardId === id);
-      const newOriginalState = (state.originalCardsState = [
-        ...state.originalCardsState.filter((card) => card.cardId !== id),
-      ]);
-      state.originalCardsState = [...newOriginalState, currentCard];
+      //Set new original State
+
+      // const currentCard = state.cards.find((card) => card.cardId === id);
+      // const newOriginalState = (state.originalCardsState = [
+      //   ...state.originalCardsState.filter((card) => card.cardId !== id),
+      // ]);
+      // state.originalCardsState = [...newOriginalState, currentCard];
+
+      const newOriginalState = state.originalCardsState.map((card) => {
+        if (card.cardId === id) {
+          return { ...card, isFav: card.isFav === false ? true : false };
+        }
+        return { ...card };
+      });
+      state.originalCardsState = newOriginalState;
+
       //Filter out the current card from Favourites list
       state.favouritesList = state.favouritesList.filter(
         (card) => card.cardId !== id
