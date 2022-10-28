@@ -6,7 +6,7 @@ import { setPage } from "../Pagination/paginateSlice";
 import { filterData } from "../Cards/cardsSlice";
 import { openModal } from "../Modal/modalSlice";
 import { Icon } from "@iconify/react";
-import FavoriteList from "../Favourites/FavoriteList";
+
 const Header = () => {
   const appStarted = useSelector((state) => state.loader.appStarted);
 
