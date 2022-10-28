@@ -4,7 +4,7 @@ const initialState = {
   cards: [],
   currentImg: "",
   originalCardsState: [],
-  favouritesList: JSON.parse(localStorage.getItem("Favorites")) || [],
+  favoriteList: JSON.parse(localStorage.getItem("Favorites")) || [],
 };
 
 const cardsSlice = createSlice({
@@ -38,7 +38,7 @@ const cardsSlice = createSlice({
 
       //Check if there is any Favourites cards and update the isFav to true
       const findFavState = state.originalCardsState.map((item) =>
-        state.favouritesList.find((card) => card.cardId === item.cardId)
+        state.favoriteList.find((card) => card.cardId === item.cardId)
           ? { ...item, isFav: true }
           : item
       );
@@ -47,14 +47,14 @@ const cardsSlice = createSlice({
       state.cards = findFavState;
     },
     setFavList: (state, data) => {
-      state.favouritesList = data.payload;
+      state.favoriteList = data.payload;
     },
     //FILTER DATA FEATURE
 
     filterData: (state, data) => {
       //Check if there is any Favourites cards and update the isFav to true
       const findFavState = state.originalCardsState.map((item) =>
-        state.favouritesList.find((card) => card.cardId === item.cardId)
+        state.favoriteList.find((card) => card.cardId === item.cardId)
           ? { ...item, isFav: true }
           : item
       );
@@ -86,12 +86,12 @@ const cardsSlice = createSlice({
         }
         return { ...card };
       });
-      //Find current card in state.cards and add it to favouritesList
+      //Find current card in state.cards and add it to favoriteList
 
       // Display updated state
       state.cards = newDisplayedCards;
       const currentCard = state.cards.find((card) => card.cardId === id);
-      state.favouritesList.push(currentCard);
+      state.favoriteList.push(currentCard);
       //Find current card in originalState , copy its properties and change isFav to true
       const newOriginalCards = state.originalCardsState.map((card) => {
         if (card.cardId === id) {
@@ -132,7 +132,7 @@ const cardsSlice = createSlice({
       state.originalCardsState = newOriginalState;
 
       //Filter out the current card from Favourites list
-      state.favouritesList = state.favouritesList.filter(
+      state.favoriteList = state.favoriteList.filter(
         (card) => card.cardId !== id
       );
     },

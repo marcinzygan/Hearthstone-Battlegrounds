@@ -25,12 +25,12 @@ function App() {
   const loading = useSelector((state) => state.loader.loading);
   const appStarting = useSelector((state) => state.loader.appStarted);
   const pageNumber = useSelector((state) => state.page.pageNumber);
-  const favouritesList = useSelector((state) => state.cards.favouritesList);
+  const favoriteList = useSelector((state) => state.cards.favoriteList);
   const showPaginationButtons = useSelector(
     (state) => state.page.showPagination
   );
   const dispatch = useDispatch();
-  console.log(favouritesList);
+  console.log(favoriteList);
 
   //CALL API FUNCTION TO FETCH DATA
   const callAPI = function () {
@@ -79,8 +79,8 @@ function App() {
   // save and remove items to local storage everytime favorites array changes
 
   React.useEffect(() => {
-    localStorage.setItem("Favorites", JSON.stringify(favouritesList));
-  }, [favouritesList]);
+    localStorage.setItem("Favorites", JSON.stringify(favoriteList));
+  }, [favoriteList]);
 
   // API CALL FOR BACKEND
   // useEffect(() => {
