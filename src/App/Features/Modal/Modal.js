@@ -4,6 +4,8 @@ import { setImg } from "../Cards/cardsSlice";
 const Modal = () => {
   const dispatch = useDispatch();
   const currentImage = useSelector((state) => state.cards.currentImg);
+  const favoriteList = useSelector((state) => state.cards.favoriteList);
+
   const closeModal = function () {
     const modal = document.querySelector(".modal-container");
     modal.classList.remove("modal-open");

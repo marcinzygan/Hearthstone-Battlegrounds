@@ -11,27 +11,17 @@ const Card = (card) => {
     const modal = document.querySelector(".modal-container");
     modal.classList.add("modal-open");
     dispatch(setImg(img));
-    console.log("click");
   };
   const addToFavourite = function () {
     dispatch(setFavourite(cardId));
   };
-  // const textCleaned = text
-  //   .replace("[x]", "")
-  //   .replaceAll("_", "")
-  //   .replace("(@ Gold left!)", "");
+
   let newText;
   if (text) {
     newText = text
       .replace("[x]", "")
       .replaceAll("_", "")
       .replace("(@ Gold left!)", "");
-    // text.includes("[x]" || "_" || "(@ Gold left!)") === true
-    //   ? text
-    //       .replace("[x]", "")
-    //       .replaceAll("_", "")
-    //       .replace("(@ Gold left!)", "")
-    //   : text;
   }
 
   return (

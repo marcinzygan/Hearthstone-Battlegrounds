@@ -1,10 +1,12 @@
 import React from "react";
+import { useState } from "react";
 import hsLogo from "../../../Images/hslogo.png";
 import { useSelector, useDispatch } from "react-redux";
 import { setPage } from "../Pagination/paginateSlice";
 import { filterData } from "../Cards/cardsSlice";
-import { useState } from "react";
+import { openModal } from "../Modal/modalSlice";
 import { Icon } from "@iconify/react";
+import FavoriteList from "../Favourites/FavoriteList";
 const Header = () => {
   const appStarted = useSelector((state) => state.loader.appStarted);
 
@@ -30,7 +32,10 @@ const Header = () => {
         {appStarted && (
           <div className="favourites__container">
             <button className="btn">
-              <Icon icon="fa-solid:heart" />
+              <Icon
+                icon="fa-solid:heart"
+                onClick={() => dispatch(openModal())}
+              />
             </button>
           </div>
         )}

@@ -30,13 +30,11 @@ function App() {
     (state) => state.page.showPagination
   );
   const dispatch = useDispatch();
-  console.log(favoriteList);
 
   //CALL API FUNCTION TO FETCH DATA
   const callAPI = function () {
     dispatch(loadingData());
 
-    console.log("API CALLED");
     const options = {
       method: "GET",
       url: "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/battlegrounds",
@@ -57,7 +55,6 @@ function App() {
         dispatch(showPagination());
         dispatch(setPage(1));
         dispatch(appStarted());
-        console.log(data);
         dispatch(notLoadingData());
       })
 
@@ -112,18 +109,6 @@ function App() {
 
   //Display cards function
   const displayCards = cards.slice(cardsSeen - 2, cardsPerPage - 2 + cardsSeen);
-  // .map((card) => {
-  //   return (
-  //     <div>
-  //       <Card {...card} />
-  //     </div>
-  //   );
-  // });
-  console.log(displayCards);
-
-  // if (loading) {
-  //   return <Loading />;
-  // }
 
   return (
     <>

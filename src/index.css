@@ -248,7 +248,8 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: red;
+  background-color: #81615d57;
+  border-radius: 25px;
   padding: 1rem 0.5rem 1rem 0.5rem;
 }
 .card-name {

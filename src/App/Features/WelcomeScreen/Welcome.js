@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 const Welcome = ({ callAPI }) => {
   const appStarted = useSelector((state) => state.loader.appStarted);
-  console.log(appStarted);
+
   const startButton = function () {
     const murloc = new Audio(murlocSound);
 
