@@ -35,46 +35,37 @@ const cardsSlice = createSlice({
       state.cards = sortedAlphabetically;
       //Set original state for filterOptions
       state.originalCardsState = sortedAlphabetically;
-      //Check if there is any Favourites cards and update state
 
-      const favCardsId = state.favouritesList.map((card) => {
-        return card.cardId;
-      });
-      console.log(favCardsId);
-      const checkID = state.originalCardsState.some(
-        (item) => item.cardId === favCardsId
+      //Check if there is any Favourites cards and update the isFav to true
+      const findFavState = state.originalCardsState.map((item) =>
+        state.favouritesList.find((card) => card.cardId === item.cardId)
+          ? { ...item, isFav: true }
+          : item
       );
-      console.log(checkID);
-      // const stateNew = state.originalCardsState.map((card) => {
-      //   //Find the id
 
-      //   if (card.cardId.includes(favCardsId)) {
-      //     return { ...card, isFav: true };
-      //   }
-      //   return { ...card };
-      // });
-      // state.originalCardsState = stateNew;
-      // state.cards = stateNew;
-      // const newDisplayedCards = state.originalCardsState.map((card) => {
-      //   if (card.includes(favCardsId)) {
-      //     return { card };
-      //   }
-      // });
-      // state.originalCardsState = newDisplayedCards;
+      // Set new state with updated isFav properties
+      state.cards = findFavState;
     },
     setFavList: (state, data) => {
       state.favouritesList = data.payload;
     },
     //FILTER DATA FEATURE
+
     filterData: (state, data) => {
+      //Check if there is any Favourites cards and update the isFav to true
+      const findFavState = state.originalCardsState.map((item) =>
+        state.favouritesList.find((card) => card.cardId === item.cardId)
+          ? { ...item, isFav: true }
+          : item
+      );
       if (data.payload === "All") {
-        state.cards = state.originalCardsState;
+        state.cards = findFavState;
       } else if (data.payload === "none") {
-        state.cards = state.originalCardsState;
+        state.cards = findFavState;
         const filteredCards = state.cards.filter((card) => !card.race);
         state.cards = [...filteredCards];
       } else {
-        state.cards = state.originalCardsState;
+        state.cards = findFavState;
         const filteredCards = state.cards.filter(
           (card) => card.race === data.payload
         );
