@@ -13,9 +13,6 @@ const Card = (card) => {
     dispatch(isFavListOpened(false));
     dispatch(setImg(img));
   };
-  const addToFavourite = function () {
-    dispatch(setFavourite(cardId));
-  };
 
   let newText;
   if (text) {
@@ -51,7 +48,7 @@ const Card = (card) => {
           {!isFav ? (
             <Icon
               icon="fa-solid:heart"
-              onClick={() => addToFavourite(cardId)}
+              onClick={() => dispatch(setFavourite(cardId))}
             />
           ) : (
             <Icon

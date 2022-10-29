@@ -345,6 +345,22 @@ img {
   width: 15rem;
   height: 20rem;
 }
+/* FAVORITES */
+.favorites__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.favorite__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 8rem;
+}
 /* FOOTER */
 .footer {
   /* position: fixed; */
