@@ -4,14 +4,17 @@ import hsLogo from "../../../Images/hslogo.png";
 import { useSelector, useDispatch } from "react-redux";
 import { setPage } from "../Pagination/paginateSlice";
 import { filterData } from "../Cards/cardsSlice";
-import { openModal } from "../Modal/modalSlice";
+import { openModal, isFavListOpened } from "../Modal/modalSlice";
 import { Icon } from "@iconify/react";
 
 const Header = () => {
   const appStarted = useSelector((state) => state.loader.appStarted);
 
   const dispatch = useDispatch();
-
+  const OpenFavList = function () {
+    dispatch(openModal());
+    dispatch(isFavListOpened(true));
+  };
   const [filterOption, setFilterOption] = useState("All");
   const handleChange = function (e) {
     e.preventDefault();
@@ -32,10 +35,7 @@ const Header = () => {
         {appStarted && (
           <div className="favourites__container">
             <button className="btn">
-              <Icon
-                icon="fa-solid:heart"
-                onClick={() => dispatch(openModal())}
-              />
+              <Icon icon="fa-solid:heart" onClick={() => OpenFavList()} />
             </button>
           </div>
         )}

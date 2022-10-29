@@ -1,15 +1,16 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setImg, setFavourite, removeFavourite } from "./cardsSlice";
+import { openModal, isFavListOpened } from "../Modal/modalSlice";
 import { Icon } from "@iconify/react";
 const Card = (card) => {
   const { cardId, name, text, img, race, isFav } = card;
   // MODAL
 
   const dispatch = useDispatch();
-  const openModal = function (img) {
-    const modal = document.querySelector(".modal-container");
-    modal.classList.add("modal-open");
+  const openImgModal = function (img) {
+    dispatch(openModal());
+    dispatch(isFavListOpened(false));
     dispatch(setImg(img));
   };
   const addToFavourite = function () {
@@ -32,7 +33,7 @@ const Card = (card) => {
         src={img}
         alt={name}
         className="card-img"
-        onClick={() => openModal(img)}
+        onClick={() => openImgModal(img)}
       />
 
       <div className="card-details">
