@@ -47,7 +47,7 @@ img {
   background-image: url(./Images/wood.jpg);
   background-position: center;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-end;
 }
 .favourites__container {
@@ -313,7 +313,7 @@ img {
 }
 /* MODAL */
 .modal-container {
-  background-color: #fadda2e4;
+  background-color: #fadda2;
   position: fixed;
   top: 0;
   right: 0;
@@ -349,10 +349,11 @@ img {
 .favorites__container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 2rem;
+  margin-top: 3rem;
 }
 .favorite__card {
   display: flex;
@@ -360,6 +361,9 @@ img {
   align-items: center;
   justify-content: center;
   min-width: 8rem;
+  background-color: #81615d57;
+  padding: 1rem;
+  border-radius: 25px;
 }
 /* FOOTER */
 .footer {

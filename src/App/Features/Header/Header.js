@@ -35,7 +35,7 @@ const Header = () => {
         {appStarted && (
           <div className="favourites__container">
             <button className="btn">
-              <Icon icon="fa-solid:heart" onClick={() => OpenFavList()} />
+              <Icon icon="bx:book-heart" onClick={() => OpenFavList()} />
             </button>
           </div>
         )}
