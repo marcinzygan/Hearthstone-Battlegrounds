@@ -19,7 +19,12 @@ const Modal = () => {
       <button onClick={() => CloseModal()} className="btn modal__btn">
         Close
       </button>
-      {isFavList && <FavoriteList />}
+      {isFavList && (
+        <>
+          <h1 className="welcome__h1">Favorite Cards :</h1>
+          <FavoriteList />
+        </>
+      )}
       {currentImage && (
         <img src={currentImage} className="modal__img" alt="card"></img>
       )}
