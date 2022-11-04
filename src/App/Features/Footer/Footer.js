@@ -10,6 +10,12 @@ const Footer = () => {
             Marcin Zygan
           </a>
         </span>
+        <div className="footer__info">
+          <p>
+            This project is using{" "}
+            <a href="https://hearthstoneapi.com">Hearthstone API</a>
+          </p>
+        </div>
       </div>
     </div>
   );
