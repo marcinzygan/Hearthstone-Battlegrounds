@@ -112,7 +112,7 @@ function App() {
 
   return (
     <>
-      {!loading && <Header callAPI={callAPI} />}
+      {!loading && <Header  />}
       {!appStarting && !loading && <Welcome callAPI={callAPI} />}
       {loading && <Loading />}
       {!loading && appStarting && (
