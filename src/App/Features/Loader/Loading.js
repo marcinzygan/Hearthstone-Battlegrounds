@@ -1,5 +1,5 @@
 import React from "react";
-import hsLogo from "../../../Images/hslogo.png";
+import hsLogo from "../../../Images/hslogo1.png";
 const Loading = () => {
   return (
     <div className="loading__container">

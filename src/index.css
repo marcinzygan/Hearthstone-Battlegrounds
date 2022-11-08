@@ -68,8 +68,7 @@ img {
 .logo {
   margin-right: auto;
   margin-left: auto;
-  height: 50px;
-  width: 60px;
+ width: 120px;
   animation: bounce 15s ease-in-out infinite;
 }
 .iconify {
