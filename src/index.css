@@ -428,3 +428,27 @@ img {
     margin-top: 4rem;
   }
 }
+@media (min-width: 600px) {
+  :root {
+    --fs-h1: 1.5rem;
+    --fs-body: 0.8rem;
+  }
+  .logo {
+    width: 180px;
+  }
+  .card {
+    width: 15rem;
+    height: 26rem;
+  }
+  .card-name {
+    max-width: 10rem;
+    height: 5rem;
+  }
+  /* .card-img {
+    width: 7rem;
+    height: 9rem;
+  } */
+  .footer__content {
+    padding-top: 3rem;
+  }
+}
