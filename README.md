@@ -16,6 +16,8 @@
 - Added reducer for setting the data
 - Added Welcome component
 - Added state for isLoading and appStarting
+- Added LOading component
+- Display Loading component conditionally when app is loading
 - Added Header component 
 - Added Footer component 
 - Display Header and Footer conditionally only after app started
@@ -23,8 +25,15 @@
 - Created card component and displays Card img , text , race 
 - Added reducer for currently viewed img
 - Added modal and function to open currently clicked image  , added function to close modal . 
+- Added favoriteList , and isFav state 
+- Added button to add current card to favorites 
+- Added Favorites component and ability to display favorites list in modal .
+- Added reducer for filtering cards by race .
+- Added state for numberOfPages , and for currentPage
+- Added Pagination component 
+- Added Pagination reducer and funcionallity to move to next , previous , first and lastpage .
 
+
+# 📫 Find me on <a href="https://marcin-zygan.com">marcin-zygan.com</a>
 - Have a nice day 🌞
-- 📫 Find me on <a href="https://marcin-zygan.com">marcin-zygan.com</a>
-
 # This project is Live <a href="https://hs-battlegrounds.netlify.app/">Here</a> ! Enjoy .
