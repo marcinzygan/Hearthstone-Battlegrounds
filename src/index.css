@@ -68,7 +68,7 @@ img {
 .logo {
   margin-right: auto;
   margin-left: auto;
- width: 120px;
+  width: 120px;
   animation: bounce 15s ease-in-out infinite;
 }
 .iconify {
@@ -186,6 +186,10 @@ img {
 .hs-border:hover .hs-text.gold {
   background: radial-gradient(circle, #fed83b 22%, #dba23e 83%, #9d6224);
 }
+.fav__icon {
+  color: red;
+}
+
 /* LOADING COMPONENT */
 .loading__container {
   height: 100vh;

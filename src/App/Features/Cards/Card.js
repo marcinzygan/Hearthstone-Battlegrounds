@@ -44,14 +44,16 @@ const Card = (card) => {
         />
       </div>
       <div className="card-buttons">
-        <button className="btn ">
+        <button className="btn card__btn">
           {!isFav ? (
             <Icon
+              className="fav__icon"
               icon="fa-solid:heart"
               onClick={() => dispatch(setFavourite(cardId))}
             />
           ) : (
             <Icon
+              className="fav__icon"
               icon="fa-solid:heart-broken"
               onClick={() => dispatch(removeFavourite(cardId))}
             />

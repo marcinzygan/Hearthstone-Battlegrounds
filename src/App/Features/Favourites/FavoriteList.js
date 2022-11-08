@@ -32,11 +32,13 @@ const FavoriteList = () => {
           <button className="btn ">
             {!card.isFav ? (
               <Icon
+                className="fav__icon "
                 icon="fa-solid:heart"
                 onClick={() => dispatch(setFavourite(card.cardId))}
               />
             ) : (
               <Icon
+                className="fav__icon "
                 icon="fa-solid:heart-broken"
                 onClick={() => dispatch(removeFavourite(card.cardId))}
               />
