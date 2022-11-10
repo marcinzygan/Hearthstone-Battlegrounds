@@ -151,6 +151,7 @@ img {
   width: 100%;
 }
 .hs-wrapper.gold {
+  margin-top: 5rem;
   background-color: #d8be52;
   background: linear-gradient(
     to bottom,
@@ -186,9 +187,9 @@ img {
 .hs-border:hover .hs-text.gold {
   background: radial-gradient(circle, #fed83b 22%, #dba23e 83%, #9d6224);
 }
-.fav__icon {
+/* .fav__icon {
   color: red;
-}
+} */
 
 /* LOADING COMPONENT */
 .loading__container {
@@ -228,10 +229,11 @@ img {
 .welcome__txt-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center;
+  justify-content: center; */
 }
 .welcome__txt {
+  text-align: center;
   padding-top: 1rem;
   line-height: 1.2;
 }
@@ -425,7 +427,7 @@ img {
     padding: 3rem;
   }
   .hs-wrapper.gold {
-    margin-top: 4rem;
+    margin-top: 7rem;
   }
 }
 @media (min-width: 600px) {

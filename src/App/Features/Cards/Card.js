@@ -48,13 +48,13 @@ const Card = (card) => {
           {!isFav ? (
             <Icon
               className="fav__icon"
-              icon="fa-solid:heart"
+              icon="mdi:heart-plus"
               onClick={() => dispatch(setFavourite(cardId))}
             />
           ) : (
             <Icon
               className="fav__icon"
-              icon="fa-solid:heart-broken"
+              icon="mdi:heart-minus"
               onClick={() => dispatch(removeFavourite(cardId))}
             />
           )}

@@ -18,7 +18,7 @@ const Welcome = ({ callAPI }) => {
       <div className="welcome__txt-container">
         {" "}
         <p className="welcome__txt">
-          In this application you can browse and learn all avaiable hearthstone
+          In this application you can browse and learn all available hearthstone
           battlegrounds cards.
         </p>
         <p className="welcome__txt">
