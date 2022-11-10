@@ -423,6 +423,14 @@ img {
 /* MEDIA QUERIES */
 
 @media (min-width: 400px) {
+  .btn {
+    width: 60px;
+    height: 35px;
+  }
+  .iconify {
+    height: 24px;
+    width: 24px;
+  }
   .welcome-screen {
     padding: 3rem;
   }
