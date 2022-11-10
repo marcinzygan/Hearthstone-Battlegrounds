@@ -258,6 +258,8 @@ img {
   background-color: #81615d57;
   border-radius: 25px;
   padding: 1rem 0.5rem 1rem 0.5rem;
+  width: 15rem;
+  height: 33rem;
 }
 .card-name {
   color: #892fa8;
@@ -473,10 +475,7 @@ img {
   .logo {
     width: 180px;
   }
-  .card {
-    width: 15rem;
-    height: 33rem;
-  }
+
   .card-img {
     width: 8rem;
     height: 12rem;
