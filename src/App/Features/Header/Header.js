@@ -46,7 +46,7 @@ const Header = () => {
         {appStarted && (
           <div className="filter__container">
             <select onChange={handleChange}>
-              <option value="All">All</option>
+              <option value="All">Show All</option>
               <option value="Murloc">Murloc</option>
               <option value="Pirate">Pirate</option>
               <option value="Naga">Naga</option>
@@ -56,7 +56,7 @@ const Header = () => {
               <option value="Beast">Beast</option>
               <option value="Mech">Mech</option>
               <option value="Elemental">Elemental</option>
-              <option value="none">none</option>
+              <option value="none">None</option>
             </select>
             <button className="btn" onClick={() => dispatch(filterOptions)}>
               Filter

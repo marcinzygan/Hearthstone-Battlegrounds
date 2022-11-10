@@ -37,6 +37,7 @@ function App() {
 
     const options = {
       method: "GET",
+      // url: "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/types/minion",
       url: "https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/sets/battlegrounds",
       headers: {
         "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
@@ -112,7 +113,7 @@ function App() {
 
   return (
     <>
-      {!loading && <Header  />}
+      {!loading && <Header />}
       {!appStarting && !loading && <Welcome callAPI={callAPI} />}
       {loading && <Loading />}
       {!loading && appStarting && (
