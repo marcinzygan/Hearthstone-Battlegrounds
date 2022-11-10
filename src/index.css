@@ -384,8 +384,18 @@ img {
 .footer__content {
   padding: 1rem;
 }
+.footer__date {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.designed {
+  display: inline;
+}
 .footer__span {
-  /* display: block; */
+  display: inline;
   padding-left: 1rem;
   padding-top: 0.25rem;
 }
@@ -398,7 +408,24 @@ img {
 .footer__info {
   margin-top: 1rem;
 }
+.social__icons-container {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+}
+.footer__icon {
+  color: #32302b;
+  height: 24px;
+  width: 24px;
+}
+.footer__icon:hover {
+  scale: 1.2;
+}
 
+.date {
+  margin-top: 1rem;
+  text-align: center;
+}
 /* ANIMATIONS */
 @keyframes bounce {
   0% {
