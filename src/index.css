@@ -33,10 +33,11 @@ img {
 }
 /* Header */
 .header {
-  min-height: 20vh;
+  min-height: 25vh;
 }
 .header-background {
-  height: 4rem;
+  min-height: 15vh;
+  /* height: 4rem; */
   background-image: url(./Images/header.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -215,10 +216,10 @@ img {
 }
 /* WELCOME COMPONENT */
 .welcome-screen {
-  min-height: 60vh;
-  margin-bottom: 2rem;
+  min-height: 50vh;
+  margin-bottom: 1rem;
   padding: 1rem;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 .welcome__h1 {
   font-size: 2rem;
@@ -306,7 +307,7 @@ img {
   transform: translate(-50%, 0); */
   /* margin-top: 0.5rem;
   margin-bottom: 0.5rem; */
-  padding: 2rem 1.5rem 2rem 1.5rem;
+  padding: 3rem 1.5rem 3rem 1.5rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -379,7 +380,7 @@ img {
   /* position: fixed; */
 
   background-image: url(./Images/wood.jpg);
-  min-height: 25vh;
+  min-height: 21vh;
   width: 100%;
   bottom: 0;
 }
@@ -464,7 +465,7 @@ img {
     padding: 3rem;
   }
   .hs-wrapper.gold {
-    margin-top: 7rem;
+    margin-top: 5rem;
   }
 }
 @media (min-width: 600px) {
@@ -507,9 +508,9 @@ img {
   }
 }
 @media (min-width: 1300px) {
-  .header-background {
+  /* .header-background {
     height: 8rem;
-  }
+  } */
   .favorite__card {
     min-width: 15rem;
   }
@@ -518,9 +519,9 @@ img {
   :root {
     --fs-body: 0.9rem;
   }
-  .header-background {
+  /* .header-background {
     height: 12rem;
-  }
+  } */
   .btn {
     width: 70px;
     height: 45px;
