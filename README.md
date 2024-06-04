@@ -3,7 +3,6 @@
 # This is React Practice Project "Hearthstone Battlegrounds"
 
 - This Project was done as a practice project for React and Redux Tollkit
-- I have designed the loog of this app in Figma
 - The HTML , CSS and whole logic of the application was implemented by myself .
 - This project is using Heartstone API for official info follow this <a href="https://hearthstoneapi.com/">LINK</a>
 
